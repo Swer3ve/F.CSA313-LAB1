@@ -22,19 +22,21 @@ F.CSA313 — Программ хангамжийн чанарын баталга
 
 | Зам | Тайлбар |
 |---|---|
-| `tests/mytest.spec.ts` | Миний бичсэн 3 тест |
-| `playwright.config.ts` | `trace: 'on'`, `video: 'on'` тохиргоотой |
-| `report/` | HTML report (trace ба видеотой) |
+| `my-first-test/tests/mytest.spec.ts` | Миний бичсэн 3 тест |
+| `my-first-test/playwright.config.ts` | `trace: 'on'`, `video: 'on'` тохиргоотой |
+| `my-first-test/report/` | HTML report (trace ба видеотой) |
+| `failed-trace/trace-failed.zip` | Санаатайгаар унагасан тестийн trace |
 | `.gitignore` | `node_modules`, `test-results`, `playwright-report` |
 
 ## Ажиллуулах
 
-```bash
+​```bash
+cd my-first-test
 npm install
 npx playwright install
 npx playwright test tests/mytest.spec.ts --project=chromium
 npx playwright show-report
-```
+​```
 
 Үр дүн: `3 passed`.
 
@@ -87,6 +89,8 @@ Received string:  "https://www.saucedemo.com/inventory.html"
 | Өнгөрсөн | `буруу нууц үгээр...`, `бараа сагслах` |
 
 Trace viewer дээр унасан `toHaveURL` алхам, тухайн мөчийн хуудасны DOM snapshot, хүлээсэн ба бодит утгыг харж болно. Дараа нь assertion-ийг `/inventory\.html/` болгож буцаасан, эцсийн ажиллуулалт `3 passed`.
+
+Унасан ажиллуулалтын trace: `failed-trace/trace-failed.zip` ([trace.playwright.dev](https://trace.playwright.dev) дээр нээнэ).
 
 ## Асуудал ба шийдэл
 
